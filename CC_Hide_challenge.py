@@ -15,14 +15,47 @@
 # Sample outcome !
 # input cc : 1234567890
 # Hidden : ******8910
-import re
+# import re
+
+# def mask_cc():
+#     cc_string = input("Type your CC number :")
+#     sum_of_cc = sum(map(str.isdigit, cc_string))
+#     mask_char = "*"
+#     digits_to_hide = sum_of_cc - 12
+
+#     out_cc = re.sub('\d', mask_char, cc_string, digits_to_hide)
+
+#     return out_cc
+
+
+# Version 2, without using any libraries
 
 def mask_cc():
-    cc_string = input("Type your CC number :")
-    sum_of_cc = sum(map(str.isdigit, cc_string))
-    mask_char = "*"
-    digits_to_hide = sum_of_cc - 14
+    user_input = input("\nType your CC number :")
+    if len(user_input) != 16:
+        print("Incorrect CC number, it must be a 16 digit long number printed on your card")
+        try_again = input("Would you like to try again ?(Y/N)")
+        if try_again.lower() == 'y':
+            mask_cc()
+        else:
+            print("bye!")
+            exit
+    elif len(user_input) == 16:
+        aList = []
+    
+        for items in user_input:
+            aList.append(items)
+        
+        for i in range(12):
+            aList[i] = "*"
+    else:
+        print("Incorrect CC number, it must be a 16 digit long number printed on your card")
+        try_again = input("Would you like to try again ?(Y/N)")
+        if try_again.lower() == 'y':
+            mask_cc()
 
-    out_cc = re.sub('\d', mask_char, cc_string, digits_to_hide)
 
-    return out_cc
+    res_list = "".join(aList)
+    
+    return res_list
+
