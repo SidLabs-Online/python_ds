@@ -29,7 +29,7 @@
 
 
 # Version 2, without using any libraries
-
+aList = []
 def mask_cc():
     user_input = input("\nType your CC number :")
     if len(user_input) != 16:
@@ -38,10 +38,10 @@ def mask_cc():
         if try_again.lower() == 'y':
             mask_cc()
         else:
-            print("bye!")
-            exit
+            return "Input Error"
+            #raise Exception("None")
     elif len(user_input) == 16:
-        aList = []
+        
     
         for items in user_input:
             aList.append(items)
@@ -53,7 +53,8 @@ def mask_cc():
         try_again = input("Would you like to try again ?(Y/N)")
         if try_again.lower() == 'y':
             mask_cc()
-
+        else:
+            return "Input Error"
 
     res_list = "".join(aList)
     
