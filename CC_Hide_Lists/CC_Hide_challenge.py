@@ -15,48 +15,52 @@
 # Sample outcome !
 # input cc : 1234567890
 # Hidden : ******8910
-# import re
+# Feature Update on october 20th 2022 : 
+# Giving only 3 attempts to the user when 
+# they make a mistake in typing the correct cc number 
 
-# def mask_cc():
-#     cc_string = input("Type your CC number :")
-#     sum_of_cc = sum(map(str.isdigit, cc_string))
-#     mask_char = "*"
-#     digits_to_hide = sum_of_cc - 12
+# Solution without using any libraries 
 
-#     out_cc = re.sub('\d', mask_char, cc_string, digits_to_hide)
-
-#     return out_cc
-
-
-# Version 2, without using any libraries
 aList = []
-def mask_cc():
+
+def masking(val):
     user_input = input("\nType your CC number :")
-    if len(user_input) != 16:
-        print("Incorrect CC number, it must be a 16 digit long number printed on your card")
-        try_again = input("Would you like to try again ?(Y/N)")
-        if try_again.lower() == 'y':
-            mask_cc()
-        else:
-            return "Input Error"
-            #raise Exception("None")
-    elif len(user_input) == 16:
-        
-    
+    val += 1
+    if len(user_input) == 16:
         for items in user_input:
             aList.append(items)
         
         for i in range(12):
             aList[i] = "*"
-    else:
-        print("Incorrect CC number, it must be a 16 digit long number printed on your card")
-        try_again = input("Would you like to try again ?(Y/N)")
+        
+        res_list = "".join(aList)
+    
+        print("\nMasked CC Number : ", res_list)
+
+    elif len(user_input) != 16:
+        print("\nIncorrect CC number, it must be a 16 digit long number printed on your card")
+        try_again = input("\nWould you like to try again ?(Y/N)")
         if try_again.lower() == 'y':
-            mask_cc()
+            driver(val)
         else:
             return "Input Error"
-
-    res_list = "".join(aList)
+            #raise Exception("None") 
     
-    return res_list
+    
+    else:
+        print("\nIncorrect CC number, it must be a 16 digit long number printed on your card")
+        try_again = input("\nWould you like to try again ?(Y/N)")
+        if try_again.lower() == 'y':
+            driver(val)
+        
 
+    
+
+def driver(attempt):
+    if attempt > 2 :
+        print("\nYou've exceeded the number of attempts\n")
+    else:
+        #attempt += 1
+        print("\nAttempt # -> ", attempt+1, "\n")
+        masking(attempt)
+    
