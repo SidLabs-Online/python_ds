@@ -26,6 +26,8 @@ def driver():
     print("Book : ", newList[user_book-1])
     print("Author : ", book_dict[newList[user_book-1]])
     print("Price : $", book_price[user_book-1])
+  else:
+    print("Sorry invalid choice, please try again!")
   # for keys in book_dict.keys():
   #   if user_book != keys:
   #     print("Sorry!\nThat's an invalid book name!")
