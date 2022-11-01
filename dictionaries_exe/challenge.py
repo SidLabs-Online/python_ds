@@ -4,7 +4,6 @@
 # 3 . allow users to access author name and price by
 #  entering a book name 
 
-from typing import List
 
 
 book_price = (12, 13, 14, 15)
@@ -28,10 +27,4 @@ def driver():
     print("Price : $", book_price[user_book-1])
   else:
     print("Sorry invalid choice, please try again!")
-  # for keys in book_dict.keys():
-  #   if user_book != keys:
-  #     print("Sorry!\nThat's an invalid book name!")
-  #     break
-  #   else:
   
-  #     break
