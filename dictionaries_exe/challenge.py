@@ -17,14 +17,14 @@ book_dict = {
 
 def driver():
   
-  user_book = int(input("What's the name of the book ? : \n 1 - harry potter\n2 - Python\n3 - JavaScript\n4 - Business\n\t:"))
+  book_index = int(input("Choose book : \n 1 - harry potter\n2 - Python\n3 - JavaScript\n4 - Business\n\t:"))
   newList = list(book_dict.keys())
   
   #print(newList[1])
-  if user_book >= 1 and user_book <= 4:
-    print("Book : ", newList[user_book-1])
-    print("Author : ", book_dict[newList[user_book-1]])
-    print("Price : $", book_price[user_book-1])
+  if book_index >= 1 and book_index <= 4:
+    print("Book : ", newList[book_index-1])
+    print("Author : ", book_dict[newList[book_index-1]])
+    print("Price : $", book_price[book_index-1])
   else:
     print("Sorry invalid choice, please try again!")
   
