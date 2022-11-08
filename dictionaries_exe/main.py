@@ -20,3 +20,6 @@ cg2.challenge_3()
 
 print("\n******** Challenge 4 ********\n")
 cg2.challenge_4()
+
+print("\n******** Challenge 5 ********\n")
+cg2.challenge_5()

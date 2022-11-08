@@ -9,6 +9,10 @@
 # replace the key "color" with "paint"
 # for the given dictionary
 
+# Challenge 5
+# From the given dict, 
+# change molly's salary to 2000
+
 carDict = {
   "brand" : "Ford",
   "model" : "Mustang",
@@ -37,3 +41,24 @@ def challenge_4():
   carDict['paint'] = carDict.pop('color')
   
   print(carDict)
+
+def challenge_5():
+  # Challenge 5
+  # From the given dict, 
+  # Change molly's salary to 2000
+
+  sample_dict = {
+    'emp1' : {'name' : 'Lance', 'Salary': 7000},
+    'emp2' : {'name' : 'Steve', 'Salary': 5000},
+    'emp3' : {'name' : 'Holly', 'salary': 8000},
+    'emp4' : {'name' : 'Lewis', 'salary': 9000},
+    'emp5' : {'name' : 'Molly', 'salary': 11000},
+  }
+
+  sample_dict['emp5']['salary'] = 2000
+
+  print(sample_dict)
+
+
+
+  
