@@ -7,6 +7,7 @@
 
 # Challenge 4 
 # replace the key "color" with "paint"
+# for the given dictionary
 
 carDict = {
   "brand" : "Ford",
@@ -33,5 +34,6 @@ def challenge_3():
 def challenge_4():
 
   #write your solution here : 
-
+  carDict['paint'] = carDict.pop('color')
+  
   print(carDict)
