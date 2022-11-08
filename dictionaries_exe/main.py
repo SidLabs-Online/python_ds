@@ -14,3 +14,6 @@ import  challenge_2 as cg2
 
 print("\n******** Challenge 2 ********\n")
 cg2.challenge_2()
+
+print("\n******** Challenge 3 ********\n")
+cg2.challenge_3()
